@@ -32,8 +32,7 @@
                     <a
                         {href}
                         class:active={$page.url.pathname === href}
-                        class:near={links.findIndex(l => l.href === $page.url.pathname) - links.findIndex(l => l.href === href) === 1}
-                        class:far={links.findIndex(l => l.href === $page.url.pathname) - links.findIndex(l => l.href === href) >= 2}
+                        style='--opacity: {1 - (links.findIndex(l => l.href === $page.url.pathname) - links.findIndex(l => l.href === href)) / links.length}'
                     >
                         {title}
                     </a>
@@ -83,22 +82,14 @@
             transition: all 150ms ease-in-out;
             user-select: none;
             -webkit-user-select: none;
+            opacity: var(--opacity);
 
             &:hover {
                 color: #aaa;
             }
 
             &.active {
-                pointer-events: none;
-                color: var(--active-color);
-            }
-
-            &.near {
-                filter: blur(.75px);
-            }
-
-            &.far {
-                filter: blur(1.5px);
+                color: var(--color);
             }
 
             &::before,

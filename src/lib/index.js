@@ -8,7 +8,6 @@ export const doStuff = (links) => {
         i++
     }
 
-    console.log(links)
     return links
 }
 
