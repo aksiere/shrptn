@@ -20,8 +20,6 @@
             })
         })
     })
-
-    const far = (href) => Math.abs(links.findIndex(l => l.href === $page.url.pathname) - links.findIndex(l => l.href === href)) >= 2 
 </script>
 
 <div class='app'>
@@ -32,7 +30,7 @@
                     <a
                         {href}
                         class:active={$page.url.pathname === href}
-                        style='--opacity: {1 - (links.findIndex(l => l.href === $page.url.pathname) - links.findIndex(l => l.href === href)) / links.length}'
+                        style='--opacity: {(1 - (links.findIndex(l => l.href === $page.url.pathname) - links.findIndex(l => l.href === href)) / links.length) >= 1 ? 1 : (1 - (links.findIndex(l => l.href === $page.url.pathname) - links.findIndex(l => l.href === href)) / links.length) / 1.5}'
                     >
                         {title}
                     </a>
@@ -65,23 +63,22 @@
     }
 
     :root::view-transition-old(root) {
-        animation: 90ms cubic-bezier(0.4, 0, 1, 1) both fade-out; /* 400ms cubic-bezier(0.4, 0, 0.2, 1) both slide-to-left; */
+        animation: .2s ease-in-out both blur-out;
     }
 
     :root::view-transition-new(root) {
-        animation: 210ms cubic-bezier(0, 0, 0.2, 1) 90ms both fade-in; /* 400ms cubic-bezier(0.4, 0, 0.2, 1) both slide-from-right; */
+        animation: .2s ease-in-out both blur-in;
     }
 
     header {
         view-transition-name: header;
         transform: translateX(var(--offset));
+        transition: all .2s ease-in-out;
 
         a {
             text-decoration: none;
             color: #555;
             transition: all 150ms ease-in-out;
-            user-select: none;
-            -webkit-user-select: none;
             opacity: var(--opacity);
 
             &:hover {
@@ -89,6 +86,7 @@
             }
 
             &.active {
+                pointer-events: none;
                 color: var(--color);
             }
 
@@ -109,27 +107,19 @@
 
     /* */
 
-    @keyframes fade-in {
+    @keyframes blur-in {
         from {
+            transform: translateX(100px);
             opacity: 0;
+            filter: blur(2px);
         }
     }
 
-    @keyframes fade-out {
+    @keyframes blur-out {
         to {
-            opacity: 0;
-        }
-    }
-
-    @keyframes slide-from-right {
-        from {
-            transform: translateX(1000px);
-        }
-    }
-
-    @keyframes slide-to-left {
-        to {
-            transform: translateX(-1000px);
+            transform: translateX(-100px);
+            opacity: 1;
+            filter: blur(2px);
         }
     }
 </style>
