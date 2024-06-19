@@ -72,7 +72,7 @@
     header {
         view-transition-name: header;
         transform: translateX(var(--offset));
-        transition: all .2s ease-in-out;
+        /* transition: all .2s ease-in-out; */
 
         a {
             text-decoration: none;
