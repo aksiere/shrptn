@@ -61,11 +61,11 @@
         flex: 1;
     }
 
-    :root::view-transition-old(root) {
+    :root::view-transition-old(main) {
         animation: .2s ease-in-out both out;
     }
 
-    :root::view-transition-new(root) {
+    :root::view-transition-new(main) {
         animation: .2s ease-in-out both in;
     }
 
