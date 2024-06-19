@@ -4,22 +4,21 @@
     import { GAP, doStuff } from '$lib'
     
     const links = doStuff([
-        { href: '/', title: '/' },
-        { href: '/about', title: 'обо мне', color: '#6374ce' },
+        { href: '/', title: 'обо мне', color: '#6374ce' },
         { href: '/skills', title: 'что умею', color: '#96f605' },
         { href: '/projects', title: 'что делаю' },
     ])
 
-    // onNavigate((navigation) => {
-    //     if (!document.startViewTransition) return
+    onNavigate((navigation) => {
+        if (!document.startViewTransition) return
 
-    //     return new Promise((resolve) => {
-    //         document.startViewTransition(async () => {
-    //             resolve()
-    //             await navigation.complete
-    //         })
-    //     })
-    // })
+        return new Promise((resolve) => {
+            document.startViewTransition(async () => {
+                resolve()
+                await navigation.complete
+            })
+        })
+    })
 </script>
 
 <div class='app'>
@@ -63,11 +62,11 @@
     }
 
     :root::view-transition-old(root) {
-        animation: .2s ease-in-out both blur-out;
+        animation: .2s ease-in-out both out;
     }
 
     :root::view-transition-new(root) {
-        animation: .2s ease-in-out both blur-in;
+        animation: .2s ease-in-out both in;
     }
 
     header {
@@ -107,7 +106,7 @@
 
     /* */
 
-    @keyframes blur-in {
+    @keyframes in {
         from {
             transform: translateX(100px);
             opacity: 0;
@@ -115,7 +114,7 @@
         }
     }
 
-    @keyframes blur-out {
+    @keyframes out {
         to {
             transform: translateX(-100px);
             opacity: 1;

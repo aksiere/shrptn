@@ -6,9 +6,8 @@
     onMount(() => show = true)
 </script>
 
-Skills
-<!-- {#if show}
-    <div in:fly={{ y: 10, duration: 500 }}>
-        Skills
-    </div>
-{/if} -->
+{#if show}
+    <p in:fly={{ y: 10, duration: 500 }}>
+        скиллы
+    </p>
+{/if}

@@ -4,8 +4,8 @@
 
     const items = [
         { href: 'https://eusto.ma', title: 'Eustoma', desc: 'телеграм-бот на веб-воркере, продающий випиэн' },
-        { href: 'https://icebergify.vercel.app', title: 'Icebergify', desc: 'интерпретатор популярности вашего музыкального вкуса' },
-        { href: 'https://github.com/aksiere/paeonia', title: 'Paeonia', desc: 'утилити-фреймворк на базе unocss' },
+        { href: 'https://icebergify.vercel.app', title: 'Icebergify', desc: 'интерпретатор популярности твоих музыкальных предпочтений' },
+        { href: 'https://github.com/aksiere/paeonia', title: 'Paeonia', desc: 'утилити-фёрст css фреймворк на базе unocss' },
     ]
 
     let show = $state(false)
@@ -15,13 +15,13 @@
 <div>
     {#each items as { href, title, desc }, i}
         {#if show}
-            <div class='mb-.25 pj' in:fly={{ y: i * 10 + 10, duration: 500 }}>
+            <p class='mb-.25 pj' in:fly={{ y: i * 10 + 10, duration: 500 }}>
                 <span style='color: #555;'>{String(i + 1).padStart(2, '0')}</span>
                 <span>{title}</span>
                 <a target='_blank' {href}>↪</a>
                 <br>
                 <span style='color: #555;'>&nbsp;&nbsp;&nbsp;{desc}</span>
-            </div><br>
+            </p>
         {/if}
     {/each}
 </div>

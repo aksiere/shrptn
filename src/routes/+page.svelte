@@ -6,9 +6,12 @@
     onMount(() => show = true)
 </script>
 
-Home
-<!-- {#if show}
+{#if show}
     <div in:fly={{ y: 10, duration: 500 }}>
-        Home
+        <p>привет!</p>
     </div>
-{/if} -->
+{/if}
+
+<style>
+
+</style>
