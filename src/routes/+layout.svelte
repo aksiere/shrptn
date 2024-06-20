@@ -2,50 +2,61 @@
     import { page } from '$app/stores'
     import { onNavigate } from '$app/navigation'
     import { GAP, doStuff } from '$lib'
+
+	const isReduced = window.matchMedia(`(prefers-reduced-motion: reduce)`) === true || window.matchMedia(`(prefers-reduced-motion: reduce)`).matches === true
     
     const links = doStuff([
         { href: '/', title: 'обо мне', color: '#6374ce' },
         { href: '/skills', title: 'что умею', color: '#96f605' },
         { href: '/projects', title: 'что делаю' },
+        { href: '/cv', title: 'сиви' },
     ])
 
-    onNavigate((navigation) => {
-        if (!document.startViewTransition) return
+	if (!isReduced) {
+		onNavigate((navigation) => {
+			if (!document.startViewTransition) return
 
-        return new Promise((resolve) => {
-            document.startViewTransition(async () => {
-                resolve()
-                await navigation.complete
-            })
-        })
-    })
+			return new Promise((resolve) => {
+				document.startViewTransition(async () => {
+					resolve()
+					await navigation.complete
+				})
+			})
+		})
+	}
 </script>
 
 <div class='app'>
     <header class='p-1 xl:mt-5' style='--offset: {links.find(l => l.href === $page.url.pathname).offset}ch; --active-color: {links.find(l => l.href === $page.url.pathname).color || 'var(--color)'}'>
-        <div class='maxw-65 mx-auto'>
-            <div class='d-flex' style='gap: {GAP}ch'>
-                {#each links as { href, title }}
-                    <a
-                        {href}
-                        class:active={$page.url.pathname === href}
-                        style='--opacity: {(1 - (links.findIndex(l => l.href === $page.url.pathname) - links.findIndex(l => l.href === href)) / links.length) >= 1 ? 1 : (1 - (links.findIndex(l => l.href === $page.url.pathname) - links.findIndex(l => l.href === href)) / links.length) / 1.5}'
-                    >
-                        {title}
-                    </a>
-                {/each}
+        <div class='maxw-55 mx-auto'>
+            <div class='d-flex'>
+				<div class='d-flex' style='gap: {GAP}ch'>
+					{#each links as { href, title }}
+						<a
+							{href}
+							class:active={$page.url.pathname === href}
+							style='--opacity: {(1 - (links.findIndex(l => l.href === $page.url.pathname) - links.findIndex(l => l.href === href)) / links.length) >= 1 ? 1 : (1 - (links.findIndex(l => l.href === $page.url.pathname) - links.findIndex(l => l.href === href)) / links.length) / 1.5}'
+						>
+							{title}
+						</a>
+					{/each}
+				</div>
             </div>
         </div>
     </header>
     
-    <main class='px-1 xl:mt-3'>
-        <div class='maxw-65 mx-auto'>
+    <main class='px-1 xl:my-3'>
+        <div class='maxw-55 mx-auto'>
             <slot />
         </div>
     </main>
     
-    <footer>
-    
+    <footer class='p-1'>
+		<div class='maxw-55 mx-auto'>
+            {#if isReduced}
+				<span class='ml-auto' style='color: var(--primary)'>все анимации и переходы были отключены</span>
+			{/if}
+        </div>
     </footer>
 </div>
 
@@ -70,39 +81,43 @@
     }
 
     header {
-        view-transition-name: header;
-        transform: translateX(var(--offset));
-        /* transition: all .2s ease-in-out; */
+		& > div > div > div {
+			view-transition-name: header;
+			transform: translateX(var(--offset));
+		}
 
         a {
-            text-decoration: none;
-            color: #555;
-            transition: all 150ms ease-in-out;
+			color: #777;
+			border-bottom: none;
             opacity: var(--opacity);
 
-            &:hover {
-                color: #aaa;
-            }
+			&.active {
+				color: #fff;
+				pointer-events: none;
+			}
 
-            &.active {
-                pointer-events: none;
-                color: var(--color);
-            }
-
-            &::before,
-            &::after {
-                color: #222;
-            }
-
-            &::before {
-                /* content: '[ '; */
-            }
-
-            &::after {
-                /* content: ' ]'; */
-            }
+			user-select: none;
+			-webkit-user-select: none;
         }
     }
+
+	@media (prefers-reduced-motion) {
+		:root::view-transition-old(root) {
+			animation: none !important;
+		}
+
+		:root::view-transition-new(root) {
+			animation: none !important;
+		}
+
+		a {
+			transition: none !important;
+		}
+
+		header {
+			transition: none !important;
+		}
+	}
 
     /* */
 

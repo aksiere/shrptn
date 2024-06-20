@@ -1,17 +1,33 @@
 :root {
     --background: #060606;
     --color: #ffffff;
+	--primary: #6374ce;
+
+	--transition-type: ease-in-out;
+	--transition-duration: .15s;
 }
 
 *, *::after, *::before {
     font-family: monospace;
     font-size: 16px;
-    user-select: none;
-    -webkit-user-select: none;
+    /* user-select: none; */
+    /* -webkit-user-select: none; */
 }
 
 body {
     margin: 0;
     background: var(--background);
     color: var(--color);
+	line-height: 2.5ch;
+}
+
+a {
+	color: var(--primary);
+	text-decoration: none;
+	border-bottom: 1px solid #222;
+	transition: all var(--transition-duration) var(--transition-type);
+
+	&:hover {
+		border-bottom-width: .5ch;
+	}
 }
