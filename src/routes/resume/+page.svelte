@@ -38,7 +38,7 @@
 
 	const copy = async (text) => {
 		await navigator.clipboard.writeText(text)
-		alert('copied')
+		// alert('copied')
 	}
 </script>
 
