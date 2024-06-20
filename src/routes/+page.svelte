@@ -16,7 +16,7 @@
 
 {#if show}
 	<p in:animate={{ y: 10, duration: 500 }}>
-		кратко
+		<!-- кратко -->
 	</p>
 {/if}
 

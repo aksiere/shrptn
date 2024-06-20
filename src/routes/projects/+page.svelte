@@ -11,6 +11,7 @@
         { href: 'https://github.com/aksiere/eustoma-proxy-tool', title: 'Eustoma Proxy Tool', desc: 'прокси-сервер на Go с поддержкой динамических ключей (ssconf://)' },
         { href: 'https://icebergify.vercel.app', title: 'Icebergify', desc: 'интерпретатор популярности твоих музыкальных предпочтений' },
         { href: 'https://github.com/aksiere/paeonia', title: 'Paeonia', desc: 'утилити-фёрст css фреймворк на базе unocss' },
+        { href: 'https://new.fips.ru/registers-doc-view/fips_servlet?DB=EVM&DocNumber=2022660896&TypeFile=html', title: 'Бонч.РИД', desc: 'веб-приложение внутреннего пользования для цифровизации учета результатов интеллектуальной деятельности' },
     ]
 
     let show = $state(false)

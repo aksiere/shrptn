@@ -1,10 +1,14 @@
 :root {
+	color-scheme: dark;
+
     --background: #060606;
-    --color: #ffffff;
+    --color: #fff;
 	--primary: #6374ce;
 
 	--transition-type: ease-in-out;
 	--transition-duration: .15s;
+
+	--layout-width: 50rem;
 }
 
 *, *::after, *::before {
@@ -19,6 +23,7 @@ body {
     background: var(--background);
     color: var(--color);
 	line-height: 2.5ch;
+	overflow-y: scroll;
 }
 
 a {
@@ -29,5 +34,11 @@ a {
 
 	&:hover {
 		border-bottom-width: .5ch;
+	}
+}
+
+@media (prefers-reduced-motion) {
+	a {
+		transition: none;
 	}
 }

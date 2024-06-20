@@ -6,10 +6,9 @@
 	const isReduced = window.matchMedia(`(prefers-reduced-motion: reduce)`) === true || window.matchMedia(`(prefers-reduced-motion: reduce)`).matches === true
     
     const links = doStuff([
-        { href: '/', title: 'обо мне', color: '#6374ce' },
-        { href: '/skills', title: 'что умею', color: '#96f605' },
-        { href: '/projects', title: 'что делаю' },
-        { href: '/cv', title: 'сиви' },
+        { href: '/', title: 'главная' },
+        { href: '/projects', title: 'проекты' },
+        { href: '/resume', title: 'résumé' },
     ])
 
 	if (!isReduced) {
@@ -27,8 +26,8 @@
 </script>
 
 <div class='app'>
-    <header class='p-1 xl:mt-5' style='--offset: {links.find(l => l.href === $page.url.pathname).offset}ch; --active-color: {links.find(l => l.href === $page.url.pathname).color || 'var(--color)'}'>
-        <div class='maxw-55 mx-auto'>
+    <header class='p-1 xl:mt-5' style='--offset: {links.find(l => l.href === $page.url.pathname).offset}ch;'>
+        <div style='max-width: var(--layout-width);' class='mx-auto'>
             <div class='d-flex'>
 				<div class='d-flex' style='gap: {GAP}ch'>
 					{#each links as { href, title }}
@@ -46,15 +45,15 @@
     </header>
     
     <main class='px-1 xl:my-3'>
-        <div class='maxw-55 mx-auto'>
+        <div style='max-width: var(--layout-width);' class='mx-auto'>
             <slot />
         </div>
     </main>
     
-    <footer class='p-1'>
-		<div class='maxw-55 mx-auto'>
+    <footer class='p-1 xl:mb-5'>
+		<div style='max-width: var(--layout-width);' class='mx-auto text-center'>
             {#if isReduced}
-				<span class='ml-auto' style='color: var(--primary)'>все анимации и переходы были отключены</span>
+				<span style='color: #555;'>все анимации и переходы были отключены</span>
 			{/if}
         </div>
     </footer>
@@ -125,7 +124,7 @@
         from {
             transform: translateX(100px);
             opacity: 0;
-            filter: blur(2px);
+            /* filter: blur(2px); */
         }
     }
 
@@ -133,7 +132,7 @@
         to {
             transform: translateX(-100px);
             opacity: 1;
-            filter: blur(2px);
+            /* filter: blur(2px); */
         }
     }
 </style>
