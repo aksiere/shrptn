@@ -21,14 +21,14 @@ function sumTitleLength(links, index) {
     return sum
 }
 
-export function getTextWidth(text, font) {
-	const canvas = getTextWidth.canvas || (getTextWidth.canvas = document.createElement('canvas'))
-	const context = canvas.getContext('2d')
-	context.font = font
-	const metrics = context.measureText(text)
-	return metrics.width
-}
+// export function getTextWidth(text, font) {
+// 	const canvas = getTextWidth.canvas || (getTextWidth.canvas = document.createElement('canvas'))
+// 	const context = canvas.getContext('2d')
+// 	context.font = font
+// 	const metrics = context.measureText(text)
+// 	return metrics.width
+// }
 
-function getCssStyle(element, prop) {
-	return window.getComputedStyle(element, null).getPropertyValue(prop)
-}
+// function getCssStyle(element, prop) {
+// 	return window.getComputedStyle(element, null).getPropertyValue(prop)
+// }

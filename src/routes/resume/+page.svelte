@@ -11,38 +11,9 @@
 
     let show = $state(false)
     onMount(() => show = true)
-	
-	// renameeeeee
-	let stack_new = $state([[], []])
-	let stack = $state(['JavaScript', 'NodeJS', 'SvelteKit', 'SCSS', 'UnoCSS', 'Prisma ORM', 'PostgreSQL', 'Serverless', 'Supabase', 'Web Workers', 'Grammy'])
-	let stack_width = $state(0)
-	let stack_items_offset = $state.frozen(2)
-
-	const get_stack_rows = () => {
-		if (stack_width === 0) return
-
-		let arr = [[]]
-		let count = 0
-
-		for (const item of stack) {
-			const width = getTextWidth(item + ' '.repeat(stack_items_offset), '16px monospace')
-			
-			if (count + width <= stack_width) {
-				count += width
-				arr.at(-1).push(item)
-			} else {
-				count = 0
-				arr.push([])
-				arr.at(-1).push(item)
-			}
-		}
-
-		console.log(arr)
-		stack_new = arr
-		// return arr
-	}
 
 	const name = 'Олег Широпатин'
+	
 	const items = [
 		{ title: 'Почта', value: 'helge@duck.com', copiable: true },
 		{ title: 'Телеграм', value: `<a target='_blank' href='https://t.me/shrptn'>@shrptn</a>` },
@@ -53,12 +24,12 @@
 	]
 
 	const educations = [
-		{ code: '09.03.02', title: 'Безопасность информационных систем', quali: 'Прикладной бакалавр', university: 'СПбГУТ им. проф. М.А. Бонч-Бруевича', started: 2018, ended: 2022 },
-		{ code: '15.04.04', title: 'Интеллектуальные технологии в автоматизации', quali: 'Магистр', university: 'СПбГУТ им. проф. М.А. Бонч-Бруевича', started: 2022, ended: 2024 },
+		{ title: 'Безопасность информационных систем', code: '09.03.02', quali: 'Прикладной бакалавр', university: 'СПбГУТ им. проф. М.А. Бонч-Бруевича', started: 2018, ended: 2022 },
+		{ title: 'Интеллектуальные технологии в автоматизации', code: '15.04.04', quali: 'Магистр', university: 'СПбГУТ им. проф. М.А. Бонч-Бруевича', started: 2022, ended: 2024 },
 	]
 
 	const jobs = [
-		{ company: 'АВТОПОЛЕ', position: 'Ассистент (отдел маркетинга и рекламы)', desc: 'Битрикс-1С, администрирование сайта, лендинги (самописные + тильда)', started: 2020, ended: 2021 }
+		{ title: 'Ассистент (отдел маркетинга и рекламы)', company: 'АВТОПОЛЕ', desc: 'Битрикс-1С, администрирование сайта, лендинги (самописные + тильда)', started: 2020, ended: 2021 }
 	]
 
 	const skills = [
@@ -161,9 +132,9 @@
 					<p class='mb-.25 pj' in:animate={{ y: 120 + (skills.length * 10) + ((i + 1) * 10), duration: 500 }}>
 						<span style='color: #555;'>{started} - {ended}</span>
 						<br>
-						{title} <span style='color: #555;'>{quali}</span>
-						<br>
 						{university}
+						<br>
+						{title} <span style='color: #555;'>{quali}</span>
 					</p>
 				{/if}
 			{/each}
@@ -178,7 +149,7 @@
 				<p class='article' in:animate={{ y: 130 + (skills.length * 10) + (educations.length * 10), duration: TRANSITION_DURATION }}>Работа</p>
 			{/if}
 
-			{#each jobs.reverse() as { company, position, desc, started, ended }, i}
+			{#each jobs.reverse() as { company, title: position, desc, started, ended }, i}
 				{#if show}
 					<p class='mb-.25 pj' in:animate={{ y: 130 + (skills.length * 10) + (educations.length * 10) + ((i + 1) * 10), duration: 500 }}>
 						<span style='color: #555;'>{started} - {ended}</span>
