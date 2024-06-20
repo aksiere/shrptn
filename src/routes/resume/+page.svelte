@@ -2,7 +2,7 @@
 	import { page } from '$app/stores'
     import { onMount } from 'svelte'
     import { fly, fade } from 'svelte/transition'
-	import { PUBLIC_USERNAME } from '$env/static/public'
+	import { PUBLIC_USERNAME, PUBLIC_LAST_UPDATED } from '$env/static/public'
 	import { getTextWidth } from '$lib'
 	import { TRANSITION_DURATION } from '$lib/settings'
 
@@ -74,7 +74,7 @@
 </script>
 
 <svelte:head>
-	<title>{PUBLIC_USERNAME} / cv</title>
+	<title>{PUBLIC_USERNAME} / résumé</title>
 </svelte:head>
 
 <div>
@@ -191,6 +191,13 @@
 			{/each}
 
 			<p></p>
+		</div>
+
+		<!-- ИНФО -->
+		<div class='1/1 text-center mb-0 mt-3'>
+			{#if show}
+				<p class='m-0' in:animate={{ y: 140 + (skills.length * 10) + (educations.length * 10) + (jobs.length * 10), duration: TRANSITION_DURATION }} style='color: #555;'>последнее изменение: {new Date(PUBLIC_LAST_UPDATED).toLocaleString('ru-RU', { weekday: 'short', year: 'numeric', month: 'short', day: 'numeric',})}</p>
+			{/if}
 		</div>
 	</div>
 </div>
