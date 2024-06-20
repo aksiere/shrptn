@@ -18,6 +18,11 @@
     /* -webkit-user-select: none; */
 }
 
+::selection {
+	background: var(--color);
+	color: var(--background);
+}
+
 body {
     margin: 0;
     background: var(--background);
