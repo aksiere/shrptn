@@ -32,7 +32,7 @@
 
 	const skills = [
 		{ title: 'Фронт', items: ['JavaScript', 'SvelteKit', 'SCSS', 'UnoCSS'] },
-		{ title: 'Бэк', items: ['Node', 'Bun', 'MongoDB', 'PostgreSQL', 'Serverless'] },
+		{ title: 'Бэк', items: ['Node', 'Bun', 'Prisma ORM', 'PostgreSQL', 'Serverless'] },
 		{ title: 'Прочее', items: ['Supabase', 'Pocketbase'] },
 	]
 
