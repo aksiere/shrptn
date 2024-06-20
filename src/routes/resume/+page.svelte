@@ -1,9 +1,7 @@
 <script>
-	import { page } from '$app/stores'
     import { onMount } from 'svelte'
-    import { fly, fade } from 'svelte/transition'
+    import { fly } from 'svelte/transition'
 	import { PUBLIC_USERNAME, PUBLIC_LAST_UPDATED } from '$env/static/public'
-	import { getTextWidth } from '$lib'
 	import { TRANSITION_DURATION } from '$lib/settings'
 
 	const isReduced = window.matchMedia(`(prefers-reduced-motion: reduce)`) === true || window.matchMedia(`(prefers-reduced-motion: reduce)`).matches === true
