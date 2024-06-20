@@ -104,7 +104,7 @@
 				{#each skills as { title, items }, i}
 					{#if show}
 						<li class='d-flex' style='gap: 2ch;' in:animate={{ y: 110 + ((i + 1) * 10), duration: TRANSITION_DURATION }}>
-							<div style='width: {Math.max(...skills.map(s => s.title.length))}ch; text-align: right;'>
+							<div style='min-width: {Math.max(...skills.map(s => s.title.length))}ch; text-align: right;'>
 								<span style='color: #555;'>{title}</span>
 							</div>
 							<div>
@@ -206,14 +206,14 @@
 		font-size: 20px;
 		margin-bottom: 2ch;
 
-		&:hover {
+		/* &:hover {
 			&::before {
 				content: '—';
 				position: absolute;
 				left: -2ch;
 				color: #555;
 			}
-		}
+		} */
 	}
 
 	@media (prefers-reduced-motion) {
