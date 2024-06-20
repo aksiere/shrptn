@@ -165,7 +165,7 @@
 		<!-- ИНФО -->
 		<div class='1/1 text-center mb-0 mt-3'>
 			{#if show}
-				<p class='m-0' in:animate={{ y: 140 + (skills.length * 10) + (educations.length * 10) + (jobs.length * 10), duration: TRANSITION_DURATION }} style='color: #555;'>последнее изменение: {new Date(PUBLIC_LAST_UPDATED).toLocaleString('ru-RU', { weekday: 'short', year: 'numeric', month: 'short', day: 'numeric',})}</p>
+				<p class='m-0' in:animate={{ y: 140 + (skills.length * 10) + (educations.length * 10) + (jobs.length * 10), duration: TRANSITION_DURATION }} style='color: #555;'>актуально на {new Date(PUBLIC_LAST_UPDATED).toLocaleString('ru-RU', { year: 'numeric', month: 'short', day: 'numeric',})}</p>
 			{/if}
 		</div>
 	</div>

@@ -7,11 +7,11 @@
 	const animate = (node, args) => isReduced ? null : fly(node, args)
 
     const items = [
-        { href: 'https://eusto.ma', title: 'Eustoma', desc: 'телеграм-бот на веб-воркере, продающий випиэн' },
-        { href: 'https://github.com/aksiere/eustoma-proxy-tool', title: 'Eustoma Proxy Tool', desc: 'прокси-сервер на Go с поддержкой динамических ключей (ssconf://)' },
-        { href: 'https://icebergify.vercel.app', title: 'Icebergify', desc: 'интерпретатор популярности твоих музыкальных предпочтений' },
-        { href: 'https://github.com/aksiere/paeonia', title: 'Paeonia', desc: 'утилити-фёрст css фреймворк на базе unocss' },
-        { href: 'https://new.fips.ru/registers-doc-view/fips_servlet?DB=EVM&DocNumber=2022660896&TypeFile=html', title: 'Бонч.РИД', desc: 'веб-приложение внутреннего пользования для цифровизации учета результатов интеллектуальной деятельности' },
+        { href: 'https://eusto.ma', title: 'Eustoma', desc: 'Телеграм-бот на веб-воркере, продающий випиэн' },
+        { href: 'https://github.com/aksiere/eustoma-proxy-tool', title: 'Eustoma Proxy Tool', desc: 'Прокси-сервер на Go с поддержкой динамических ключей (ssconf://)' },
+        { href: 'https://icebergify.vercel.app', title: 'Icebergify', desc: 'Интерпретатор популярности твоих музыкальных предпочтений' },
+        { href: 'https://github.com/aksiere/paeonia', title: 'Paeonia', desc: 'Утилити-фёрст CSS фреймворк на базе UnoCSS' },
+        { href: 'https://new.fips.ru/registers-doc-view/fips_servlet?DB=EVM&DocNumber=2022660896&TypeFile=html', title: 'Бонч.РИД', desc: 'Веб-приложение внутреннего пользования для цифровизации учета результатов интеллектуальной деятельности' },
     ]
 
     let show = $state(false)
@@ -29,7 +29,7 @@
                 <span style='color: #555;'>{String(i + 1).padStart(2, '0')}</span>
                 <a target='_blank' {href}>{title}</a>
                 <br>
-                <span style='color: #555;'>&nbsp;&nbsp;&nbsp;{desc}</span>
+                <span>&nbsp;&nbsp;&nbsp;{desc}</span>
             </p>
         {/if}
     {/each}
