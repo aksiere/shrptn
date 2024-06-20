@@ -90,6 +90,10 @@
 			border-bottom: none;
             opacity: var(--opacity);
 
+			&:hover {
+				color: #aaa;
+			}
+
 			&.active {
 				color: #fff;
 				pointer-events: none;
