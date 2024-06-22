@@ -32,8 +32,8 @@
 
 	const skills = [
 		{ title: 'Фронт', items: ['JavaScript', 'SvelteKit', 'SCSS', 'UnoCSS'] },
-		{ title: 'Бэк', items: ['Node', 'Bun', 'Prisma ORM', 'PostgreSQL', 'Serverless'] },
-		{ title: 'Прочее', items: ['Supabase', 'Pocketbase'] },
+		{ title: 'Бэк', items: ['Node', 'Bun', 'Supabase', 'PHP', 'Prisma', 'PostgreSQL', 'Serverless'] },
+		{ title: 'Прочее', items: ['Grammy'] },
 	]
 
 	const copy = async (text) => {
