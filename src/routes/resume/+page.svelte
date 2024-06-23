@@ -3,6 +3,7 @@
     import { fly } from 'svelte/transition'
 	import { PUBLIC_USERNAME, PUBLIC_LAST_UPDATED } from '$env/static/public'
 	import { TRANSITION_DURATION } from '$lib/settings'
+	import { toast, Toaster } from 'svelte-sonner'
 
 	const isReduced = window.matchMedia(`(prefers-reduced-motion: reduce)`) === true || window.matchMedia(`(prefers-reduced-motion: reduce)`).matches === true
 	const animate = (node, args) => isReduced ? null : fly(node, args)
@@ -38,13 +39,25 @@
 
 	const copy = async (text) => {
 		await navigator.clipboard.writeText(text)
-		// alert('copied')
+		toast('Текст скопирован', {
+			duration: 3000,
+			description: text
+		})
 	}
 </script>
 
 <svelte:head>
 	<title>{PUBLIC_USERNAME} / résumé</title>
 </svelte:head>
+
+<Toaster toastOptions={{
+	unstyled: true,
+	classes: {
+		toast: 'toast',
+		title: 'toast-title',
+		description: 'toast-description'
+	}
+}} />
 
 <div>
 	<div class='flex align-flex-end'>

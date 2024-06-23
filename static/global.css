@@ -42,6 +42,21 @@ a {
 	}
 }
 
+.toast {
+	width: 100%;
+	background: var(--background);
+	padding: .75rem 1.25rem;
+	border: 1px solid #222;
+}
+
+.toast-title {
+	color: #777;
+}
+
+.toast-description {
+	
+}
+
 @media (prefers-reduced-motion) {
 	a {
 		transition: none;
