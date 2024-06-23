@@ -214,21 +214,6 @@
 		}
 	}
 
-	p.article {
-		position: relative;
-		font-size: 20px;
-		margin-bottom: 2ch;
-
-		/* &:hover {
-			&::before {
-				content: '—';
-				position: absolute;
-				left: -2ch;
-				color: #555;
-			}
-		} */
-	}
-
 	@media (prefers-reduced-motion) {
 		.copiable {
 			&::before, &::after {

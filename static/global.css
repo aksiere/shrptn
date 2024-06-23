@@ -42,6 +42,21 @@ a {
 	}
 }
 
+p.article {
+	position: relative;
+	font-size: 20px;
+	margin-bottom: 2ch;
+
+	/* &:hover {
+		&::before {
+			content: '—';
+			position: absolute;
+			left: -2ch;
+			color: #555;
+		}
+	} */
+}
+
 .toast {
 	width: 100%;
 	background: var(--background);
