@@ -10,8 +10,8 @@
 		{ href: 'https://eusto.ma', title: 'Eustoma', desc: 'телеграм-бот на веб-воркере, продающий випиэн', target: '_blank' },
         { href: 'https://github.com/aksiere/eustoma-proxy-tool', title: 'Eustoma Proxy Tool', desc: 'прокси-сервер на Go с поддержкой динамических ключей (ssconf://)', target: '_blank' },
         { href: 'https://icebergify.vercel.app', title: 'Icebergify', desc: 'интерпретатор популярности твоих музыкальных предпочтений', target: '_blank' },
-        { href: '/ui/solutions', title: 'UIX Solutions', desc: 'разнообразные uix решения', disabled: true },
-        { href: 'https://github.com/aksiere/paeonia', title: 'Paeonia', desc: 'утилити-фёрст CSS фреймворк на базе UnoCSS', target: '_blank' },
+        { href: '/ui/solutions', title: 'Frasera', desc: 'библиотека детально проработанных UI компонентов', disabled: true },
+        { href: 'https://github.com/aksiere/paeonia', title: 'Paeonia', desc: 'utility-first CSS фреймворк на базе UnoCSS', target: '_blank' },
         { href: 'https://new.fips.ru/registers-doc-view/fips_servlet?DB=EVM&DocNumber=2022660896&TypeFile=html', title: 'Бонч.РИД', desc: 'веб-приложение внутреннего пользования для цифровизации учета результатов интеллектуальной деятельности', target: '_blank' },
     ]
 
