@@ -26,7 +26,7 @@
 		<div class:debug={showInteractiveArea} class='content' data-pullable='true'>
 			<p style="color: black;" data-pullable='true'>"выдвижной ящик"</p>
 			<p data-pullable='true'>компонент может использоваться как альтернатива модальному окну на мобильных устройствах</p>
-			<p data-pullable='true'>стилизованный "из коробки"; имеет жестовые анимации; написан с нуля, вдохновляясь работой <a href='https://vaul.emilkowal.ski/'>эмиля ковальски</a>.</p>
+			<p data-pullable='true'>стилизованный "из коробки"; имеет жестовые анимации; написан с нуля под свелт и ваниллу, вдохновляясь работой <a href='https://vaul.emilkowal.ski/'>эмиля ковальски</a>.</p>
 			<p data-pullable='true'>нет зависимостей и написан максимально ёмко (5,070 байт до компрессии).</p>
 			<hr>
 			<p data-pullable='true'>будет частью библиотеки frasera.<br>документация и исходники когда-нибудь...</p>
