@@ -13,17 +13,20 @@
 	]
 </script>
 
-<div class='flex'>
-	{#each components as { href, title, desc }, i}
-		<div class='1/2' class:text-right={i % 2 === 1} class:text-left={i % 2 === 0}>
-			{#if show}
-				<p class='mb-.25 pj' in:animate={{ y: i * 10 + 10, duration: 500 }}>
-					<span style='color: #555;'>{String(i + 1).padStart(2, '0')}</span>
-					<a {href}>{title}</a><br>
-					<span style='color: #555;'>{desc}</span><br>
-				</p>
-			{/if}
+<main class='px-1 xl:my-3'>
+	<div style='max-width: var(--layout-width);' class='mx-auto'>
+		<div class='flex'>
+			{#each components as { href, title, desc }, i}
+				<div class='1/2' class:text-right={i % 2 === 1} class:text-left={i % 2 === 0}>
+					{#if show}
+						<p class='mb-.25 pj' in:animate={{ y: 10, duration: 500 }}>
+							<span style='color: #555;'>{String(i + 1).padStart(2, '0')}</span>
+							<a {href}>{title}</a><br>
+							<span style='color: #555;'>{desc}</span><br>
+						</p>
+					{/if}
+				</div>
+			{/each}
 		</div>
-	{/each}
-</div>
-
+	</div>
+</main>
