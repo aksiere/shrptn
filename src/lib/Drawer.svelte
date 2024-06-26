@@ -149,7 +149,7 @@
 	.drawer {
 		touch-action: none;
 		padding: 1rem;
-		background: #121212;
+		background: #fff;
 		border-top-left-radius: 12px;
 		border-top-right-radius: 12px;
 		/* border: 1px solid #222; */
@@ -166,7 +166,7 @@
 
 		& > .pull {
 			display: block;
-			background: #242424;
+			background: #ddd;
 			width: 3rem;
 			height: .375rem;
 			border-radius: 10px;
