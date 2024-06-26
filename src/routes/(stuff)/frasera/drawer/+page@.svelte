@@ -23,13 +23,13 @@
 		height: 90,
 		opacity: 60,
 	}}>
-		<div class:debug={showInteractiveArea} class='content'>
-			<p style="color: black;">"выдвижной ящик"</p>
-			<p>компонент может использоваться как альтернатива модальному окну на мобильных устройствах</p>
-			<p>стилизованный "из коробки"; имеет жестовые анимации; написан с нуля, вдохновляясь работой <a href='https://vaul.emilkowal.ski/'>эмиля ковальски</a>.</p>
-			<p>нет зависимостей и написан максимально ёмко (5,070 байт до компрессии).</p>
+		<div class:debug={showInteractiveArea} class='content' data-pullable='true'>
+			<p style="color: black;" data-pullable='true'>"выдвижной ящик"</p>
+			<p data-pullable='true'>компонент может использоваться как альтернатива модальному окну на мобильных устройствах</p>
+			<p data-pullable='true'>стилизованный "из коробки"; имеет жестовые анимации; написан с нуля, вдохновляясь работой <a href='https://vaul.emilkowal.ski/'>эмиля ковальски</a>.</p>
+			<p data-pullable='true'>нет зависимостей и написан максимально ёмко (5,070 байт до компрессии).</p>
 			<hr>
-			<p>будет частью библиотеки frasera.<br>документация и исходники когда-нибудь...</p>
+			<p data-pullable='true'>будет частью библиотеки frasera.<br>документация и исходники когда-нибудь...</p>
 			<!-- <p>you can control what content doesn't need to be interacted with and can be pulled by user. by default, this is the entire child container, but you can add <code class='mono'>data-pullable='false'</code> to prevent this behavior, as here.</p> -->
 			<!-- <p onclick={() => showInteractiveArea = !showInteractiveArea} style='cursor: pointer; user-select: none; -webkit-user-select: none;'><u class='mono'>click here to {showInteractiveArea ? 'hide' : 'show'} the area protected from being 'grabbed'</u></p> -->
 			<!-- <pre class='mono'>{`options={{\n\tpadding: 16; // padding of scaled parent (px)\n\tradius:  10; // radius of scaled parent (px)\n\topacity: 40; // opacity of dim (%)\n\theight: 92; // height of drawer (%)\n}}`}</pre> -->

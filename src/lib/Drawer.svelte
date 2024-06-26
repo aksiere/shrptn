@@ -175,9 +175,9 @@
 		}
 	}
 
-	:global([data-pullable='false']) {
-		cursor: text !important;
-		user-select: text !important;
-		-webkit-user-select: text !important;
-	}
+	/* :global([data-pullable='false']) {
+		cursor: auto;
+		user-select: auto;
+		-webkit-user-select: auto;
+	} */
 </style>
