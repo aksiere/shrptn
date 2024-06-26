@@ -9,7 +9,7 @@
     onMount(() => show = true)
 
 	const components = [
-		{ href: '/frasera/drawer', title: 'Drawer', desc: 'выдвигающийся компонент, может использоваться в качестве замены модальному окну на мобильный устройствах.' },
+		{ href: '/frasera/drawer', title: 'Drawer', desc: 'выдвигающийся компонент, может использоваться в качестве замены модальному окну на мобильных устройствах.' },
 	]
 </script>
 
@@ -17,7 +17,7 @@
 	<div style='max-width: var(--layout-width);' class='mx-auto'>
 		<div class='flex'>
 			{#each components as { href, title, desc }, i}
-				<div class='1/2' class:text-right={i % 2 === 1} class:text-left={i % 2 === 0}>
+				<div class='1/1 md:1/2' class:text-right={i % 2 === 1} class:text-left={i % 2 === 0}>
 					{#if show}
 						<p class='mb-.25 pj' in:animate={{ y: 10, duration: 500 }}>
 							<span style='color: #555;'>{String(i + 1).padStart(2, '0')}</span>
