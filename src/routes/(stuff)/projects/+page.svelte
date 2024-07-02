@@ -7,7 +7,7 @@
 	const animate = (node, args) => isReduced ? null : fly(node, args)
 
     const items = [
-        { href: '/frasera', title: 'Frasera', desc: 'библиотека детально проработанных UI компонентов', disabled: false },
+        { href: '/frasera', title: 'Frasera', desc: 'библиотека детально проработанных UI компонентов', disabled: true },
 		{ href: 'https://eusto.ma', title: 'Eustoma', desc: 'телеграм-бот на веб-воркере, продающий випиэн', target: '_blank' },
         { href: 'https://github.com/aksiere/eustoma-proxy-tool', title: 'Eustoma Proxy Tool', desc: 'прокси-сервер на Go с поддержкой динамических ключей (ssconf://)', target: '_blank' },
         { href: 'https://icebergify.vercel.app', title: 'Icebergify', desc: 'интерпретатор популярности твоих музыкальных предпочтений', target: '_blank' },
