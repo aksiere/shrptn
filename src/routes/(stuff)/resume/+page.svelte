@@ -101,7 +101,7 @@
 		<div class='1/1'>
 			{#if show}
 				<p in:animate={{ y: 80, duration: TRANSITION_DURATION }} class='text-justify'>Привет! Меня зовут Олег, я разработчик и дизайнер. Занимаюсь фронтендом, бэкендом и всем, что с этим связано. Основной разработческий стек - это JavaScript и всё к нему прилегающее. Помимо этого начал изучать Go. Но считаю, что в конкретных ситуациях разработчик должен приходить в незнакомую для себя среду и разбираться в проблемах там.</p>
-				<p in:animate={{ y: 90, duration: TRANSITION_DURATION }} class='text-justify'>Свои проекты делаю на SvelteKit (знакомство со Svelte начал ещё до выхода SvelteKit (тогда был <a href='https://sapper.svelte.dev/'>Sapper</a>)), вместо классических препроцессоров использую UnoCSS + Tailwind (плюс делаю свой фреймворк для более быстрой адаптивной верстки), в качестве сборщика - Vite.</p>
+				<p in:animate={{ y: 90, duration: TRANSITION_DURATION }} class='text-justify'>Свои проекты делаю на SvelteKit (знакомство со Svelte начал ещё до выхода SvelteKit (тогда был <a target='_blank' href='https://sapper.svelte.dev/'>Sapper</a>)), вместо классических препроцессоров использую UnoCSS + Tailwind (плюс делаю свой фреймворк для более быстрой адаптивной верстки), в качестве сборщика - Vite.</p>
 				<p in:animate={{ y: 100, duration: TRANSITION_DURATION }} class='text-justify'>Для бэкенда использую все тот же SvelteKit, а БД, если необходима, то использую Supabase / Neon (Serverless Postgres), либо через ормку (Prisma).</p>
 			{/if}
 		</div>
