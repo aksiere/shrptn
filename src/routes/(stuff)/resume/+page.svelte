@@ -102,7 +102,7 @@
 			{#if show}
 				<p in:animate={{ y: 80, duration: TRANSITION_DURATION }} class='text-justify'>Привет! Меня зовут Олег, я разработчик и дизайнер и тестировщик, короче всё в одном. Занимаюсь фронтендом, бэкендом и всем, что с этим связано. Основной разработческий стек - это HTML/CSS/JavaScript и всё к ним прилегающее. Помимо этого есть небольшие познания в Go / Java. Считаю, что в конкретных ситуациях разработчик должен приходить в незнакомую для себя среду и разбираться в проблемах там.</p>
 				<p in:animate={{ y: 90, duration: TRANSITION_DURATION }} class='text-justify'>Свои проекты делаю преимущественно на SvelteKit (знакомство со Svelte начал ещё до выхода SvelteKit (тогда был <a target='_blank' href='https://sapper.svelte.dev/'>Sapper</a>)), хотя также немного знаком с Vue. Для работы со стилями пользуюсь Tailwind (и иногда UnoCSS), плюс есть свой небольшой фреймворк для более быстрой адаптивной верстки. Сборщик - только Vite, рантайм - Bun.</p>
-				<p in:animate={{ y: 100, duration: TRANSITION_DURATION }} class='text-justify'>Для бэкенда использую все тот же SvelteKit, либо <code>Bun.serve()</code>, а БД, если необходима, то использую Supabase / Pocketbase / Neon (Serverless PostgreSQL), либо SQLite для специфичных случаев.</p>
+				<p in:animate={{ y: 100, duration: TRANSITION_DURATION }} class='text-justify'>Для бэкенда использую все тот же SvelteKit, либо <code>Bun.serve()</code>, а БД, если необходима, то использую Supabase / Pocketbase / Neon (Serverless PostgreSQL), либо SQLite для особенных случаев.</p>
 			{/if}
 		</div>
 
