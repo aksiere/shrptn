@@ -100,9 +100,9 @@
 
 		<div class='1/1'>
 			{#if show}
-				<p in:animate={{ y: 80, duration: TRANSITION_DURATION }} class='text-justify'>Привет! Меня зовут Олег, я разработчик и дизайнер. Занимаюсь фронтендом, бэкендом и всем, что с этим связано. Основной разработческий стек - это JavaScript и всё к нему прилегающее. Помимо этого начал изучать Go. Но считаю, что в конкретных ситуациях разработчик должен приходить в незнакомую для себя среду и разбираться в проблемах там.</p>
-				<p in:animate={{ y: 90, duration: TRANSITION_DURATION }} class='text-justify'>Свои проекты делаю на SvelteKit (знакомство со Svelte начал ещё до выхода SvelteKit (тогда был <a target='_blank' href='https://sapper.svelte.dev/'>Sapper</a>)), вместо классических препроцессоров использую UnoCSS + Tailwind (плюс делаю свой фреймворк для более быстрой адаптивной верстки), в качестве сборщика - Vite.</p>
-				<p in:animate={{ y: 100, duration: TRANSITION_DURATION }} class='text-justify'>Для бэкенда использую все тот же SvelteKit, либо <code>Bun.serve()</code>, а БД, если необходима, то использую Supabase / Neon (Serverless PostgreSQL), либо через ормку (Prisma).</p>
+				<p in:animate={{ y: 80, duration: TRANSITION_DURATION }} class='text-justify'>Привет! Меня зовут Олег, я разработчик и дизайнер и тестировщик, короче всё в одном. Занимаюсь фронтендом, бэкендом и всем, что с этим связано. Основной разработческий стек - это HTML/CSS/JavaScript и всё к ним прилегающее. Помимо этого есть небольшие познания в Go / Java. Считаю, что в конкретных ситуациях разработчик должен приходить в незнакомую для себя среду и разбираться в проблемах там.</p>
+				<p in:animate={{ y: 90, duration: TRANSITION_DURATION }} class='text-justify'>Свои проекты делаю преимущественно на SvelteKit (знакомство со Svelte начал ещё до выхода SvelteKit (тогда был <a target='_blank' href='https://sapper.svelte.dev/'>Sapper</a>)), хотя также немного знаком с Vue. Для работы со стилями пользуюсь Tailwind (и иногда UnoCSS), плюс есть свой небольшой фреймворк для более быстрой адаптивной верстки. Сборщик - только Vite, рантайм - Bun.</p>
+				<p in:animate={{ y: 100, duration: TRANSITION_DURATION }} class='text-justify'>Для бэкенда использую все тот же SvelteKit, либо <code>Bun.serve()</code>, а БД, если необходима, то использую Supabase / Pocketbase / Neon (Serverless PostgreSQL), либо SQLite для специфичных случаев.</p>
 			{/if}
 		</div>
 
