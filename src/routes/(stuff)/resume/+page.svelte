@@ -141,13 +141,14 @@
 
 			{#each educations.reverse() as { code, title, university, quali, started, ended }, i}
 				{#if show}
-					<p class='mb-.25 pj' in:animate={{ y: 120 + (skills.length * 10) + ((i + 1) * 10), duration: 500 }}>
+					<div class='mb-.25 pj' in:animate={{ y: 120 + (skills.length * 10) + ((i + 1) * 10), duration: 500 }} style='display: flex; flex-direction: column; gap: 2px;'>
 						<span style='color: #555;'>{started} - {ended}</span>
-						<br>
-						{university}
-						<br>
-						<div style='display: flex;'>{title} <span style='color: #555; margin-left: auto;'>{quali}</span></div>
-					</p>
+						<span>{university}</span>
+						<div style='display: flex;'>
+							<span>{title}</span>
+							<span style='color: #555; margin-left: auto;'>{quali}</span>
+						</div>
+					</div>
 				{/if}
 			{/each}
 
