@@ -18,7 +18,7 @@
 {#if show}
 	<div class='flex'>
 		<div class='1/1'>
-			<p in:animate={{ y: 10, duration: TRANSITION_DURATION }} style='text-align: justify;'>Привет! Я Олег. Мне нравится придумывать и продумывать. Касательно как пользовательского интерфейса (того, как он выглядит, ощущается, ведет себя), так и клиент-серверной логики (того, как оптимизировать и сделать шустрее).</p>
+			<p in:animate={{ y: 10, duration: TRANSITION_DURATION }} style='text-align: justify;'>Привет! Я Олег. Люблю придумывать и продумывать, что угодно и очень дотошно, скрупулезно: структура текста, выделение основных деталей, какой взять ракурс для фото, в каком месте расположить объект, какого цвета сделать кнопку у формы, насколько удобно пользоваться таким интерфейсом, как сделать его тактильным, как оптимизировать серверный код и не заставлять пользователя чего-то ждать на пустом экране. Всё это меня всегда очень сильно волнует в моих проектах или том, что я "потребляю".</p>
 			<p in:animate={{ y: 20, duration: TRANSITION_DURATION }} style='text-align: justify;'>Помимо этого, увлекаюсь фотографией, музыкой и кино. Так что найти меня можно в самых разных соцсетях, заблокированных и не очень:</p>
 			<p in:animate={{ y: 30, duration: TRANSITION_DURATION }} style='text-align: justify;'><a target='_blank' href='https://www.instagram.com/shrptn/'>nstgrm</a> <a target='_blank' href='https://www.last.fm/user/aksiere'>lstfm</a> <a target='_blank' href='https://letterboxd.com/aksiere/'>lttrbxd</a> <a target='_blank' href='https://t.me/shrptn'>tlgrm</a></p>
 			<p in:animate={{ y: 40, duration: TRANSITION_DURATION }} style='text-align: justify;'>А написать можно <a href='mailto:yie@tuta.io'>сюда</a> и <a target='_blank' href='https://t.me/shrptn'>сюда</a>.</p>
