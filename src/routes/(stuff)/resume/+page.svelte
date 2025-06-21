@@ -24,6 +24,7 @@
 
 	const educations = [
 		{ title: 'Безопасность информационных систем', code: '09.03.02', quali: 'Прикладной бакалавр', university: 'СПбГУТ им. проф. М.А. Бонч-Бруевича', started: 2018, ended: 2022 },
+		{ title: 'Безопасность информационных систем', code: '09.03.02', quali: 'Прикладной бакалавр', university: 'СПбГУТ им. проф. М.А. Бонч-Бруевича', started: 2018, ended: 2022 },
 		
 		{ title: 'Интеллектуальные технологии в автоматизации', code: '15.04.04', quali: 'Магистр', university: 'СПбГУТ им. проф. М.А. Бонч-Бруевича', started: 2022, ended: 2024 },
 	]
@@ -33,9 +34,9 @@
 	]
 
 	const skills = [
-		{ title: 'Фронт', items: ['JavaScript', 'SvelteKit', 'SCSS', 'UnoCSS'] },
-		{ title: 'Бэк', items: ['Node', 'Bun', 'Supabase', 'PHP', 'Prisma', 'PostgreSQL', 'Serverless'] },
-		{ title: 'Прочее', items: ['Grammy'] },
+		{ title: 'Фронт', items: ['JavaScript', 'Svelte', 'Tailwind', 'SCSS', 'UnoCSS'] },
+		{ title: 'Бэк', items: ['Bun', 'Node', 'SvelteKit', 'Supabase', 'Pocketbase', 'Redis', 'Prisma', 'PostgreSQL', 'Serverless'] },
+		{ title: 'Прочее', items: ['PHP', 'Go', 'Grammy', 'Figma', 'Photoshop'] },
 	]
 
 	const copy = async (text) => {
