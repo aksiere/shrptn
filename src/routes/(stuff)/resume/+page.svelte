@@ -24,11 +24,12 @@
 
 	const educations = [
 		{ title: 'Безопасность информационных систем', code: '09.03.02', quali: 'Прикладной бакалавр', university: 'СПбГУТ им. проф. М.А. Бонч-Бруевича', started: 2018, ended: 2022 },
+		{ title: 'Ассистент (отдел маркетинга и рекламы)', company: 'АВТОПОЛЕ', desc: 'Битрикс-1С, администрирование сайта, лендинги (самописные + тильда)', started: 2020, ended: 2021 },
 		{ title: 'Интеллектуальные технологии в автоматизации', code: '15.04.04', quali: 'Магистр', university: 'СПбГУТ им. проф. М.А. Бонч-Бруевича', started: 2022, ended: 2024 },
 	]
 
 	const jobs = [
-		{ title: 'Ассистент (отдел маркетинга и рекламы)', company: 'АВТОПОЛЕ', desc: 'Битрикс-1С, администрирование сайта, лендинги (самописные + тильда)', started: 2020, ended: 2021 }
+		
 	]
 
 	const skills = [
@@ -135,7 +136,7 @@
 
 		<div class='1/1'>
 			{#if show}
-				<p class='article' in:animate={{ y: 120 + (skills.length * 10), duration: TRANSITION_DURATION }}>Образование</p>
+				<p class='article' in:animate={{ y: 120 + (skills.length * 10), duration: TRANSITION_DURATION }}>Образование / работа</p>
 			{/if}
 
 			{#each educations.reverse() as { code, title, university, quali, started, ended }, i}
@@ -155,7 +156,7 @@
 
 		<!-- РАБОТА -->
 
-		<div class='1/1'>
+		<!-- <div class='1/1'>
 			{#if show}
 				<p class='article' in:animate={{ y: 130 + (skills.length * 10) + (educations.length * 10), duration: TRANSITION_DURATION }}>Работа</p>
 			{/if}
@@ -173,7 +174,7 @@
 			{/each}
 
 			<p></p>
-		</div>
+		</div> -->
 
 		<!-- ИНФО -->
 		<div class='1/1 text-center mb-0 mt-3'>
