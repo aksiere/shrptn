@@ -146,7 +146,7 @@
 						<br>
 						{university}
 						<br>
-						{title} <span style='color: #555;'>{quali}</span>
+						<div style='display: flex;'>{title} <span style='color: #555; margin-left: auto;'>{quali}</span></div>
 					</p>
 				{/if}
 			{/each}
