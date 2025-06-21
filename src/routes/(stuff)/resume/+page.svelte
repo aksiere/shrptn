@@ -146,7 +146,7 @@
 						<span>{university}</span>
 						<div style='display: flex;'>
 							<span>{title}</span>
-							<span style='color: #555; margin-left: auto;'>{quali}</span>
+							<span style='color: #555; margin-left: auto; text-align: right;'>{quali}</span>
 						</div>
 					</div>
 				{/if}
