@@ -139,20 +139,20 @@
 				<p class='article' in:animate={{ y: 120 + (skills.length * 10), duration: TRANSITION_DURATION }}>Образование / работа</p>
 			{/if}
 
-			{#each educations.reverse() as { code, title, university, quali, started, ended }, i}
-				{#if show}
-					<div class='mb-.25 pj' in:animate={{ y: 120 + (skills.length * 10) + ((i + 1) * 10), duration: 500 }} style='display: flex; flex-direction: column; gap: 2px;'>
-						<span style='color: #555;'>{started} - {ended}</span>
-						<span>{university}</span>
-						<div style='display: flex;'>
-							<span>{title}</span>
-							<span style='color: #555; margin-left: auto; text-align: right;'>{@html quali}</span>
+			<div style='display: flex; flex-direction: column; gap: 1rem;'>
+				{#each educations.reverse() as { code, title, university, quali, started, ended }, i}
+					{#if show}
+						<div class='pj' in:animate={{ y: 120 + (skills.length * 10) + ((i + 1) * 10), duration: 500 }} style='display: flex; flex-direction: column; gap: 2px;'>
+							<span style='color: #555;'>{started} - {ended}</span>
+							<span>{university}</span>
+							<div style='display: flex;'>
+								<span>{title}</span>
+								<span style='color: #555; margin-left: auto; text-align: right;'>{@html quali}</span>
+							</div>
 						</div>
-					</div>
-				{/if}
-			{/each}
-
-			<p></p>
+					{/if}
+				{/each}
+			</div>
 		</div>
 
 		<!-- РАБОТА -->
