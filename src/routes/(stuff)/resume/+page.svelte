@@ -24,7 +24,7 @@
 
 	const educations = [
 		{ title: 'Безопасность информационных систем', code: '09.03.02', quali: 'Прикладной бакалавр', university: 'СПбГУТ им. проф. М.А. Бонч-Бруевича', started: 2018, ended: 2022 },
-		{ title: 'Ассистент (отдел маркетинга и рекламы)', university: 'АВТОПОЛЕ', quali: '1С-Битрикс, администрирование сайта,<br>лендинги (самописные + тильда)', started: 2020, ended: 2021 },
+		{ title: 'Ассистент (отдел маркетинга и рекламы)', university: 'АВТОПОЛЕ', quali: '— Поддержка и администрирование сайта (1С-Битрикс)\n— Разработка лендингов (HTML/CSS/JS, Tilda)', started: 2020, ended: 2021 },
 		{ title: 'Интеллектуальные технологии в автоматизации', code: '15.04.04', quali: 'Магистр', university: 'СПбГУТ им. проф. М.А. Бонч-Бруевича', started: 2022, ended: 2024 },
 	]
 
@@ -33,9 +33,9 @@
 	]
 
 	const skills = [
-		{ title: 'Фронт', items: ['JavaScript', 'Svelte', 'Tailwind', 'SCSS', 'UnoCSS'] },
-		{ title: 'Бэк', items: ['Bun', 'Node', 'SvelteKit', 'Supabase', 'Pocketbase', 'Redis', 'Prisma', 'PostgreSQL', 'Serverless'] },
-		{ title: 'Прочее', items: ['PHP', 'Go', 'Grammy', 'Figma', 'Photoshop'] },
+		{ title: 'Фронт', items: ['HTML', 'CSS', 'JavaScript', 'SvelteKit', 'Vue', 'Tailwind CSS', 'SCSS', 'UnoCSS'] },
+		{ title: 'Бэк', items: ['Bun', 'Node.js', 'SvelteKit (BFF)', 'Supabase', 'Pocketbase', 'Redis', 'Prisma', 'PostgreSQL', 'SQLite'] },
+		{ title: 'Прочее', items: ['Vite', 'Bun.serve()', 'PHP', 'Go', '1С-Битрикс', 'Figma', 'Photoshop', 'Tilda', 'Telegram Bot API (Grammy)'] },
 	]
 
 	const copy = async (text) => {
