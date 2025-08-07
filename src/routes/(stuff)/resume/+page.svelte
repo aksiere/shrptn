@@ -35,7 +35,7 @@
 	const skills = [
 		{ title: 'Фронт', items: ['HTML', 'CSS', 'JavaScript', 'SvelteKit', 'Vue', 'Tailwind CSS', 'SCSS', 'UnoCSS'] },
 		{ title: 'Бэк', items: ['Bun', 'Node.js', 'SvelteKit (BFF)', 'Supabase', 'Pocketbase', 'Redis', 'Prisma', 'PostgreSQL', 'SQLite'] },
-		{ title: 'Прочее', items: ['Vite', 'Bun.serve()', 'PHP', 'Go', '1С-Битрикс', 'Figma', 'Photoshop', 'Tilda', 'Telegram Bot API (Grammy)', 'Serverless'] },
+		{ title: 'Прочее', items: ['Vite', 'Elysia', 'PHP', 'Go', '1С', 'Figma', 'Photoshop', 'Tilda', 'Telegram Bot API (Grammy, Telegraf)', 'Serverless'] },
 	]
 
 	const copy = async (text) => {
@@ -101,8 +101,8 @@
 
 		<div class='1/1'>
 			{#if show}
-				<p in:animate={{ y: 80, duration: TRANSITION_DURATION }} class='text-justify'>Фулстек-разработчик с опытом самостоятельной работы над проектами — от дизайна до продакшн-развертывания. Основной стек: JavaScript, SvelteKit, Tailwind, Bun. Хорошо ориентируюсь как во фронтенде, так и в бэкенде, быстро разбираюсь в новых технологиях и задачах.</p>
-				<p in:animate={{ y: 90, duration: TRANSITION_DURATION }} class='text-justify'>Люблю писать чистый, понятный код и строить удобные интерфейсы. Есть опыт работы с дизайном (Figma, Photoshop) и созданием собственных UI-фреймворков.</p>
+				<p in:animate={{ y: 80, duration: TRANSITION_DURATION }} class='text-justify'>Привет, я Олег. Фулстек-разработчик с опытом самостоятельной работы над проектами - от дизайна до развертывания. Основной стек: Bun, JavaScript, SvelteKit, Supabase, Tailwind. Хорошо ориентируюсь как во фронтенде, так и в бэкенде, быстро разбираюсь в новых технологиях и задачах.</p>
+				<p in:animate={{ y: 90, duration: TRANSITION_DURATION }} class='text-justify'>Люблю писать чистый, понятный код и строить удобные интерфейсы. Есть опыт создания собственных UI фреймворков.</p>
 			{/if}
 		</div>
 
