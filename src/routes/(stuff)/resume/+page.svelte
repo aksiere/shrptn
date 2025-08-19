@@ -101,8 +101,10 @@
 
 		<div class='1/1'>
 			{#if show}
-				<p in:animate={{ y: 80, duration: TRANSITION_DURATION }} class='text-justify'>Привет, я Олег. Фулстек-разработчик с опытом самостоятельной работы над проектами - от дизайна до развертывания. Основной стек: Bun, JavaScript, SvelteKit, Supabase, Tailwind. Хорошо ориентируюсь как во фронтенде, так и в бэкенде, быстро разбираюсь в новых технологиях и задачах.</p>
-				<p in:animate={{ y: 90, duration: TRANSITION_DURATION }} class='text-justify'>Люблю писать чистый, понятный код и строить удобные интерфейсы. Есть опыт создания собственных UI фреймворков.</p>
+				<p in:animate={{ y: 80, duration: TRANSITION_DURATION }} class='text-justify'>Привет!</p>
+				<p in:animate={{ y: 90, duration: TRANSITION_DURATION }} class='text-justify'>Меня зовут Олег, я разработчик и тестировщик. Занимаюсь фронтендом, бэкендом, тестированием и всем, что с этим связано. Основной разработческий стек - это JavaScript и всё к нему прилегающее. Но считаю, что в конкретных ситуациях разработчик должен приходить в незнакомую для себя среду и разбираться в проблемах там.</p>
+				<p in:animate={{ y: 100, duration: TRANSITION_DURATION }} class='text-justify'>Начинал когда-то с PHP, а сейчас пишу фулстэк вокруг Bun, SvelteKit, Tailwind и Supabase/Pocketbase. Основная деятельность сейчас вокруг этого стека. Считаю Svelte очень перспективным. Также умею писать ботов для телеграма на Grammy. Немного знаком с Java - писал моды для игры. </p>
+				<p in:animate={{ y: 110, duration: TRANSITION_DURATION }} class='text-justify'>Также рассматриваю тестирование в качестве основного направления деятельности, потому что мне чуждо выражение done is better than perfect и я люблю все доводить до идеала, из-за чего некоторые мои идеи так и не были реализованы. Но если в случае с разработкой я скорее согласен с выражением, то с тестированием, на мой взгляд, как раз наоборот, поэтому я стал знакомиться с теорией тестирования, т.к. я всегда скрупулезно тестирую свои пет-проекты и мне интересно искать изъяны в продукте и делать его лучше.</p>
 			{/if}
 		</div>
 
@@ -110,13 +112,13 @@
 
 		<div class='1/1'>
 			{#if show}
-				<p class='article' in:animate={{ y: 110, duration: TRANSITION_DURATION }}>Стек</p>
+				<p class='article' in:animate={{ y: 120, duration: TRANSITION_DURATION }}>Стек</p>
 			{/if}
 
 			<ul>
 				{#each skills as { title, items }, i}
 					{#if show}
-						<li class='d-flex' style='gap: 2ch;' in:animate={{ y: 110 + ((i + 1) * 10), duration: TRANSITION_DURATION }}>
+						<li class='d-flex' style='gap: 2ch;' in:animate={{ y: 130 + ((i + 1) * 10), duration: TRANSITION_DURATION }}>
 							<div style='min-width: {Math.max(...skills.map(s => s.title.length))}ch; text-align: right;'>
 								<span style='color: #555;'>{title}</span>
 							</div>
@@ -135,13 +137,13 @@
 
 		<div class='1/1'>
 			{#if show}
-				<p class='article' in:animate={{ y: 120 + (skills.length * 10), duration: TRANSITION_DURATION }}>Образование / работа</p>
+				<p class='article' in:animate={{ y: 140 + (skills.length * 10), duration: TRANSITION_DURATION }}>Образование / работа</p>
 			{/if}
 
 			<div style='display: flex; flex-direction: column; gap: 1rem;'>
 				{#each educations.reverse() as { code, title, university, quali, started, ended }, i}
 					{#if show}
-						<div class='pj' in:animate={{ y: 120 + (skills.length * 10) + ((i + 1) * 10), duration: 500 }} style='display: flex; flex-direction: column; gap: 2px;'>
+						<div class='pj' in:animate={{ y: 150 + (skills.length * 10) + ((i + 1) * 10), duration: 500 }} style='display: flex; flex-direction: column; gap: 2px;'>
 							<span style='color: #555;'>{started} - {ended}</span>
 							<span>{university}</span>
 							<div style='display: flex;'>
@@ -158,12 +160,12 @@
 
 		<!-- <div class='1/1'>
 			{#if show}
-				<p class='article' in:animate={{ y: 130 + (skills.length * 10) + (educations.length * 10), duration: TRANSITION_DURATION }}>Работа</p>
+				<p class='article' in:animate={{ y: 160 + (skills.length * 10) + (educations.length * 10), duration: TRANSITION_DURATION }}>Работа</p>
 			{/if}
 
 			{#each jobs.reverse() as { company, title: position, desc, started, ended }, i}
 				{#if show}
-					<p class='mb-.25 pj' in:animate={{ y: 130 + (skills.length * 10) + (educations.length * 10) + ((i + 1) * 10), duration: 500 }}>
+					<p class='mb-.25 pj' in:animate={{ y: 170 + (skills.length * 10) + (educations.length * 10) + ((i + 1) * 10), duration: 500 }}>
 						<span style='color: #555;'>{started} - {ended}</span>
 						<br>
 						{company} <span style='color: #555;'>{position}</span>
@@ -179,8 +181,8 @@
 		<!-- ИНФО -->
 		<div class='1/1 text-center mb-0 mt-3'>
 			{#if show}
-				<p class='m-0' in:animate={{ y: 140 + (skills.length * 10) + (educations.length * 10) + (jobs.length * 10), duration: TRANSITION_DURATION }} style='color: #555;'>актуально на {new Date(PUBLIC_LAST_UPDATED).toLocaleString('ru-RU', { year: 'numeric', month: 'short', day: 'numeric',})}</p>
-				<p class='m-0' in:animate={{ y: 150 + (skills.length * 10) + (educations.length * 10) + (jobs.length * 10), duration: TRANSITION_DURATION }} style='color: #555;'><a target='_blank' href='/resume.pdf'>pdf-версия</a></p>
+				<p class='m-0' in:animate={{ y: 180 + (skills.length * 10) + (educations.length * 10) + (jobs.length * 10), duration: TRANSITION_DURATION }} style='color: #555;'>актуально на {new Date(PUBLIC_LAST_UPDATED).toLocaleString('ru-RU', { year: 'numeric', month: 'short', day: 'numeric',})}</p>
+				<p class='m-0' in:animate={{ y: 190 + (skills.length * 10) + (educations.length * 10) + (jobs.length * 10), duration: TRANSITION_DURATION }} style='color: #555;'><a target='_blank' href='/resume.pdf'>pdf-версия</a></p>
 			{/if}
 		</div>
 	</div>
