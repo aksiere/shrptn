@@ -14,7 +14,7 @@
 	const name = 'Олег Широпатин'
 	
 	const items = [
-		{ title: 'Почта', value: 'helge@duck.com', copiable: true },
+		{ title: 'Почта', value: 'kittila@duck.com', copiable: true },
 		{ title: 'Телеграм', value: `<a target='_blank' href='https://t.me/shrptn'>@shrptn</a>` },
 		{ title: 'Телефон', value: '+79118452242', copiable: true },
 		{ title: 'Дата рождения', value: '27.04.2000' },
