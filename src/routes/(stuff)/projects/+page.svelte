@@ -7,7 +7,7 @@
 	const animate = (node, args) => isReduced ? null : fly(node, args)
 
     const items = [
-        { href: '/', title: 'Cine', desc: 'WIP', disabled: true },
+        { href: '/', title: 'Cine', desc: 'work in progress', stack: 'sveltekit, js, nodejs, paraglide, supabase, tmdb api', disabled: true },
         // { href: '/frasera', title: 'Frasera', desc: 'библиотека детально проработанных UI компонентов', stack: '', disabled: false },
 	{ href: 'https://eusto.ma', title: 'Eustoma', desc: 'коммерческий телеграм-бот на веб-воркере', stack: 'js, grammy, telegram api', target: '_blank' },
         // { href: 'https://github.com/aksiere/eustoma-proxy-tool', title: 'Eustoma Proxy Tool', desc: 'прокси-сервер на Go с поддержкой динамических ключей (ssconf://)', target: '_blank' },
