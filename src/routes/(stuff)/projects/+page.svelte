@@ -7,6 +7,7 @@
 	const animate = (node, args) => isReduced ? null : fly(node, args)
 
     const items = [
+        { href: '/', title: 'Cine', desc: 'сервис для синефилов', disabled: true },
         // { href: '/frasera', title: 'Frasera', desc: 'библиотека детально проработанных UI компонентов', disabled: false },
 	{ href: 'https://eusto.ma', title: 'Eustoma', desc: 'коммерческий телеграм-бот на веб-воркере', target: '_blank' },
         // { href: 'https://github.com/aksiere/eustoma-proxy-tool', title: 'Eustoma Proxy Tool', desc: 'прокси-сервер на Go с поддержкой динамических ключей (ssconf://)', target: '_blank' },
