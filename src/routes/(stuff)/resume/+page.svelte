@@ -26,7 +26,7 @@
 		{ title: 'Безопасность информационных систем', code: '09.03.02', quali: 'Прикладной бакалавр', university: 'СПбГУТ им. проф. М.А. Бонч-Бруевича', started: 2018, ended: 2022 },
 		{ title: 'Ассистент (отдел маркетинга и рекламы)', university: 'АВТОПОЛЕ', quali: 'Поддержка и администрирование сайта (1С-Битрикс); Разработка лендингов (PHP, Tilda)', started: 2020, ended: 2021 },
 		{ title: 'Интеллектуальные технологии в автоматизации', code: '15.04.04', quali: 'Магистр', university: 'СПбГУТ им. проф. М.А. Бонч-Бруевича', started: 2022, ended: 2024 },
-		{ title: 'Специалист по тестированию', university: 'ONLYOFFICE', quali: 'QA Engineer (Manual + Automation), ONLYOFFICE', started: 2025, ended: 2026 },
+		{ title: 'Специалист по тестированию', university: 'ONLYOFFICE', quali: 'QA Engineer (Manual + Automation)', started: 2025, ended: 2026 },
 	]
 
 	const jobs = [
