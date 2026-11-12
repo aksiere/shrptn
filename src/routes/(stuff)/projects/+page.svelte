@@ -7,13 +7,13 @@
 	const animate = (node, args) => isReduced ? null : fly(node, args)
 
     const items = [
-        { href: '/', title: 'Cine', desc: 'сервис для синефилов', disabled: true },
-        // { href: '/frasera', title: 'Frasera', desc: 'библиотека детально проработанных UI компонентов', disabled: false },
-	{ href: 'https://eusto.ma', title: 'Eustoma', desc: 'коммерческий телеграм-бот на веб-воркере', target: '_blank' },
+        { href: '/', title: 'Cine', desc: 'WIP', disabled: true },
+        // { href: '/frasera', title: 'Frasera', desc: 'библиотека детально проработанных UI компонентов', stack: '', disabled: false },
+	{ href: 'https://eusto.ma', title: 'Eustoma', desc: 'коммерческий телеграм-бот на веб-воркере', stack: 'js, grammy, telegram api', target: '_blank' },
         // { href: 'https://github.com/aksiere/eustoma-proxy-tool', title: 'Eustoma Proxy Tool', desc: 'прокси-сервер на Go с поддержкой динамических ключей (ssconf://)', target: '_blank' },
-        { href: 'https://icebergify.vercel.app/', title: 'Icebergify', desc: 'интерпретатор популярности твоих музыкальных предпочтений', target: '_blank' },
+        { href: 'https://icebergify.vercel.app/', title: 'Icebergify', desc: 'интерпретатор популярности твоих музыкальных предпочтений', stack: 'sveltekit, js, nodejs, spotify api', target: '_blank' },
         // { href: 'https://github.com/aksiere/paeonia', title: 'Paeonia', desc: 'utility-first CSS фреймворк на базе UnoCSS', target: '_blank' },
-        { href: 'https://new.fips.ru/registers-doc-view/fips_servlet?DB=EVM&DocNumber=2022660896&TypeFile=html', title: 'Бонч.РИД', desc: 'веб-приложение внутреннего пользования для цифровизации учета результатов интеллектуальной деятельности', target: '_blank' },
+        { href: 'https://new.fips.ru/registers-doc-view/fips_servlet?DB=EVM&DocNumber=2022660896&TypeFile=html', title: 'Бонч.РИД', desc: 'веб-приложение внутреннего пользования для цифровизации учета результатов интеллектуальной деятельности', stack: 'php, js', target: '_blank' },
     ]
 
     let show = $state(false)
@@ -25,13 +25,15 @@
 </svelte:head>
 
 <div>
-    {#each items as { href, title, desc, target, disabled }, i}
+    {#each items as { href, title, desc, stack, target, disabled }, i}
         {#if show}
             <p class='mb-.25 pj' in:animate={{ y: i * 10 + 10, duration: 500 }} class:disabled={disabled}>
                 <span style='color: #555;'>{String(i + 1).padStart(2, '0')}</span>
                 <a target={target || '_self'} {href}>{title}</a>
                 <br>
                 <span>&nbsp;&nbsp;&nbsp;{desc}</span>
+                <br>
+                <span style='color: #777;'>&nbsp;&nbsp;&nbsp;{stack}</span>
             </p>
         {/if}
     {/each}
