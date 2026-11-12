@@ -34,9 +34,10 @@
 	]
 
 	const skills = [
-		{ title: 'Фронт', items: ['HTML', 'CSS', 'JavaScript', 'SvelteKit', 'Vue', 'Tailwind CSS', 'SCSS', 'UnoCSS'] },
+		{ title: 'Фронт', items: ['HTML', 'CSS', 'JavaScript', 'Svelte', 'Vue', 'Tailwind CSS', 'SCSS', 'UnoCSS'] },
 		{ title: 'Бэк', items: ['Bun', 'Node.js', 'SvelteKit (BFF)', 'Supabase', 'Pocketbase', 'Redis', 'Prisma', 'PostgreSQL', 'SQLite'] },
-		{ title: 'Прочее', items: ['Vite', 'Elysia', 'PHP', 'Go', '1С', 'Figma', 'Photoshop', 'Tilda', 'Telegram Bot API (Grammy, Telegraf)', 'Serverless'] },
+		{ title: 'Прочее', items: ['Git', 'GitHub', 'Vite', 'Puppeteer', 'Elysia', 'PHP', 'Figma', 'Telegram Bot API (Grammy, Telegraf)', 'Serverless'] },
+		{ title: 'ИИ', items: ['Claude Code', 'Codex'] },
 	]
 
 	const copy = async (text) => {
@@ -98,7 +99,7 @@
 			{/if}
 		</div>
 
-		<!-- ОБО МНЕ -->
+		<!-- ОБО МНЕ 
 
 		<div class='1/1'>
 			{#if show}
@@ -107,7 +108,7 @@
 				<p in:animate={{ y: 100, duration: TRANSITION_DURATION }} class='text-justify'>Начинал когда-то с PHP, а сейчас пишу фулстэк вокруг Bun, SvelteKit, Tailwind и Supabase/Pocketbase. Основная деятельность сейчас вокруг этого стека. Считаю Svelte очень перспективным. Также умею писать ботов для телеграма на Grammy. Немного знаком с Java - писал моды для игры. </p>
 				<p in:animate={{ y: 110, duration: TRANSITION_DURATION }} class='text-justify'>Также рассматриваю тестирование в качестве основного направления деятельности, потому что мне чуждо выражение done is better than perfect и я люблю все доводить до идеала, из-за чего некоторые мои идеи так и не были реализованы. Но если в случае с разработкой я скорее согласен с выражением, то с тестированием, на мой взгляд, как раз наоборот, поэтому я стал активно знакомиться с теорией, т.к. я всегда скрупулезно тестирую свои пет-проекты и мне интересно искать изъяны в продукте и делать его лучше.</p>
 			{/if}
-		</div>
+		</div>-->
 
 		<!-- СТЕК -->
 
