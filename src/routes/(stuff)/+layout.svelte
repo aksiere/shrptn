@@ -4,7 +4,7 @@
     import { onNavigate } from '$app/navigation'
     import { activePreview, linkPreviews } from '$lib/hoverPreview'
     import ProjectPreview from '$lib/ProjectPreview.svelte'
-    import { rise, setDirection } from '$lib/transitions'
+    import { isLite, rise, setDirection } from '$lib/transitions'
 
     const SHOW_NAV = true // set to false to hide the sliding nav
 
@@ -42,7 +42,8 @@
         const to = indexOf(navigation.to?.url)
         const direction = from < 0 || to < 0 ? 0 : Math.sign(to - from)
         setDirection(direction) // read by the new page's blocks as they come in
-        if (!document.startViewTransition || window.matchMedia('(prefers-reduced-motion: reduce)').matches) return
+        // On phones the new blocks animating in is enough; the nav slides with a CSS transition.
+        if (!document.startViewTransition || isLite() || window.matchMedia('(prefers-reduced-motion: reduce)').matches) return
         document.documentElement.dataset.nav = direction > 0 ? 'forward' : direction < 0 ? 'back' : ''
         return new Promise(resolve => {
             document.startViewTransition(async () => {
@@ -78,6 +79,9 @@
     .app { width: min(var(--layout-width), calc(100% - 2 * var(--gap-page))); margin-inline: auto; padding-block: var(--gap-section) 8rem; }
     header { margin-bottom: var(--gap-section); }
     .links { position: relative; display: flex; gap: 1.5rem; width: max-content; transform: translateX(var(--offset)); view-transition-name: header; }
+    /* Without a view transition (phones) the nav slides on its own. */
+    @media (hover: none), (max-width: 640px) { .links { transition: transform .35s cubic-bezier(.2, 0, 0, 1); } }
+    @media (prefers-reduced-motion: reduce) { .links { transition: none; } }
     .links a { color: var(--muted); text-decoration: none; opacity: var(--opacity); user-select: none; -webkit-user-select: none; }
     .links a:hover { color: var(--color); }
     .links a.active { color: var(--color); pointer-events: none; }

@@ -2,6 +2,7 @@
     import { onDestroy, onMount } from 'svelte'
     import { PUBLIC_USERNAME, PUBLIC_LAST_UPDATED } from '$env/static/public'
     import { hoverPreview } from '$lib/hoverPreview'
+    import { slide } from 'svelte/transition'
     import { rise, stagger } from '$lib/transitions'
     import Reveal from '$lib/Reveal.svelte'
 
@@ -157,6 +158,10 @@
     const updated = new Date(PUBLIC_LAST_UPDATED)
     const showUpdated = !Number.isNaN(updated.getTime()) && updated.getFullYear() >= 2020
 
+    // Touch screens can't hover: tapping the name shows the photo under the header instead.
+    let photoOpen = false
+    const togglePhoto = () => { if (matchMedia('(hover: none)').matches) photoOpen = !photoOpen }
+
     // Load the photo ahead so it's there on the first hover.
     onMount(() => { new Image().src = photo.preview })
 </script>
@@ -165,8 +170,11 @@
 
 <Reveal>
 <header class='intro-header cv-header' in:rise|global={{ delay: stagger(0) }}>
-    <h1 class='name' use:hoverPreview={photo}>{name}</h1>
+    <h1 class='name' use:hoverPreview={photo}><button class='name-button' onclick={togglePhoto} aria-expanded={photoOpen}>{name}</button></h1>
     <span class='role'>{role}</span>
+    {#if photoOpen}
+        <div class='photo' transition:slide={{ duration: 250 }}><img src={photo.preview} alt={name} width='180' height='240' /></div>
+    {/if}
 </header>
 
 <section class='section' aria-labelledby='profile-title' in:rise|global={{ delay: stagger(1) }}>
@@ -225,10 +233,13 @@
     .cv-header { display: flex; flex-direction: column; align-items: flex-start; }
     h1 { margin: 0; }
     .role { color: var(--muted); font-weight: 500; line-height: 1; }
-    /* A quiet hint that the name hides something; only where hovering is possible. */
-    @media (hover: hover) and (pointer: fine) {
-        .name { cursor: default; text-decoration: underline dotted var(--underline); text-decoration-thickness: 1px; text-underline-offset: 5px; }
-    }
+    /* A quiet hint that the name hides something: a photo on hover, or on tap on touch screens. */
+    .name { cursor: default; }
+    .name-button { text-decoration: underline dotted var(--underline); text-decoration-thickness: 1px; text-underline-offset: 5px; }
+    .name-button { padding: 0; border: none; background: none; color: inherit; font: inherit; text-align: left; cursor: inherit; }
+    @media (hover: none) { .name { cursor: pointer; } .name-button { -webkit-tap-highlight-color: transparent; } }
+    .photo { padding-top: .75rem; }
+    .photo img { display: block; width: 180px; height: 240px; border-radius: 8px; object-fit: cover; box-shadow: 0 0 0 1px var(--border); }
 
     .prose { color: var(--muted); }
     .prose p { margin: 0 0 var(--gap-text); text-wrap: pretty; }
