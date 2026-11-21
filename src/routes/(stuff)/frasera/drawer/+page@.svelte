@@ -16,7 +16,7 @@
 	</div>
 	
 	<div>
-		<button onclick={() => show = !show}>показать</button>
+		<button onclick={() => show = !show}>Show drawer</button>
 	</div>
 
 	<Drawer {show} {onclose} options={{
@@ -24,12 +24,12 @@
 		opacity: 60,
 	}}>
 		<div class:debug={showInteractiveArea} class='content' data-pullable='true'>
-			<p style="color: black;" data-pullable='true'>"выдвижной ящик"</p>
-			<p data-pullable='true'>компонент может использоваться как альтернатива модальному окну на мобильных устройствах</p>
-			<p data-pullable='true'>стилизованный "из коробки"; имеет жестовые анимации; написан с нуля под свелт и ваниллу, вдохновляясь работой <a href='https://vaul.emilkowal.ski/'>эмиля ковальски</a>.</p>
-			<p data-pullable='true'>нет зависимостей и написан максимально ёмко (5,070 байт до компрессии).</p>
+			<p style="color: black;" data-pullable='true'>Drawer</p>
+			<p data-pullable='true'>A component that can replace modal dialogs on mobile devices.</p>
+			<p data-pullable='true'>Styled out of the box, with gesture animations. Built from scratch for Svelte and vanilla JavaScript, inspired by <a href='https://vaul.emilkowal.ski/'>Emil Kowalski</a>.</p>
+			<p data-pullable='true'>Dependency-free and compact (5,070 bytes before compression).</p>
 			<hr>
-			<p data-pullable='true'>будет частью библиотеки frasera.<br>документация и исходники когда-нибудь...</p>
+			<p data-pullable='true'>Part of the upcoming Frasera library.<br>Documentation and source code coming later.</p>
 			<!-- <p>you can control what content doesn't need to be interacted with and can be pulled by user. by default, this is the entire child container, but you can add <code class='mono'>data-pullable='false'</code> to prevent this behavior, as here.</p> -->
 			<!-- <p onclick={() => showInteractiveArea = !showInteractiveArea} style='cursor: pointer; user-select: none; -webkit-user-select: none;'><u class='mono'>click here to {showInteractiveArea ? 'hide' : 'show'} the area protected from being 'grabbed'</u></p> -->
 			<!-- <pre class='mono'>{`options={{\n\tpadding: 16; // padding of scaled parent (px)\n\tradius:  10; // radius of scaled parent (px)\n\topacity: 40; // opacity of dim (%)\n\theight: 92; // height of drawer (%)\n}}`}</pre> -->

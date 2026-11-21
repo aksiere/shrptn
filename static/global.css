@@ -1,81 +1,83 @@
+/* Allo by Josh Puckett (SIL OFL, see fonts/Allo-OFL.txt): variable weight, roundness (ROND) and
+   optical size. It has no Cyrillic, so Geist stays as the fallback for those characters. */
+@font-face { font-family: 'Allo'; src: url('/fonts/AlloVariable.woff2') format('woff2'); font-style: normal; font-weight: 100 900; font-display: swap; }
+@font-face { font-family: 'Allo'; src: url('/fonts/Allo-Oblique.woff2') format('woff2'); font-style: oblique; font-weight: 400; font-display: swap; }
+@font-face { font-family: 'Geist'; src: url('/fonts/Geist-Regular.woff2') format('woff2'); font-style: normal; font-weight: 400; font-display: swap; }
+@font-face { font-family: 'Geist'; src: url('/fonts/Geist-Medium.woff2') format('woff2'); font-style: normal; font-weight: 500 900; font-display: swap; }
+
 :root {
-	color-scheme: dark;
-
-    --background: #060606;
-    --color: #fff;
-	--primary: #6374ce;
-
-	--transition-type: ease-in-out;
-	--transition-duration: .15s;
-
-	--layout-width: 50rem;
-}
-
-*, *::after, *::before {
-	box-sizing: border-box;
-    font-family: 'Fira Mono';
+    color-scheme: dark;
+    /* Electric blue with sky-blue type and a cyan accent. Text colours keep at least 3:1 (faint)
+       and 4.5:1 (muted and up) against the background. */
+    --background: #1c07d2;
+    --surface: #2814db;
+    --border: #3d35e0;
+    --underline: #495de2;
+    --faint: #6c84ee;
+    --muted: #8aaef7;
+    --color: #88d7fe;
+    --strong: #c4ecff;
+    --accent: #61fdef;
+    --ink: #111111;
+    --primary: var(--color);
+    --transition-type: ease-in-out;
+    --transition-duration: .15s;
+    --layout-width: 40.25rem;
+    /* One spacing scale for every page. */
+    --gap-page: 1.5rem;                      /* side padding of the column */
+    --gap-section: clamp(3rem, 8vw, 4.5rem); /* top of the page, nav to content, between sections */
+    --gap-title: 1rem;                       /* section title to its content */
+    --gap-item: 1.5rem;                      /* between entries in a list */
+    --gap-text: 1rem;                        /* between paragraphs */
+    --gap-column: 1rem;                      /* between a label column and its content */
+    --font: 'Allo', 'Geist', sans-serif;
+    font-family: var(--font);
     font-size: 16px;
-    /* user-select: none; */
-    /* -webkit-user-select: none; */
+    font-synthesis: none;
+    /* Allo's alternates: ss02 tells I l 1 0 apart, ss03 opens 4 6 9; calt turns -> into arrows,
+       liga joins tt/ff/ft. Optical size follows the font size on its own. */
+    font-feature-settings: 'ss02', 'ss03', 'calt', 'liga', 'kern';
+    font-optical-sizing: auto;
+    text-transform: lowercase;
+    -webkit-font-smoothing: antialiased;
 }
+*, *::after, *::before { box-sizing: border-box; }
+body { margin: 0; min-height: 100svh; background: var(--background); color: var(--color); line-height: 1.5; overflow-x: clip; overflow-y: scroll; }
+button, input, textarea, select { font: inherit; text-transform: inherit; }
+::selection { background: var(--accent); color: var(--background); }
+a { color: inherit; text-decoration-color: var(--underline); text-decoration-thickness: .08em; text-underline-offset: 3px; transition: color var(--transition-duration), text-decoration-color var(--transition-duration); }
+a:hover { text-decoration-color: var(--accent); }
+a:focus-visible, button:focus-visible { outline: 2px solid var(--accent); outline-offset: 5px; border-radius: 2px; }
+/* Everything that acts as a heading (page and section titles, entry and project titles) shares one
+   style: same size, weight, roundness and colour. Add .heading to non-heading elements in that role. */
+h1, h2, h3, p.article, .heading { font-size: 1rem; font-weight: 600; line-height: 1.5; color: var(--strong); font-variation-settings: 'ROND' 100; }
+/* Numbers that line up: dates, periods. */
+.numeric { font-feature-settings: 'ss02', 'ss03', 'calt', 'kern', 'tnum'; }
+h1, p { margin: 0 0 1.25rem; }
+h2, p.article { margin: 3rem 0 1.5rem; }
+.toast { width: 100%; background: var(--surface); padding: .75rem 1.25rem; border: 1px solid var(--border); font-family: var(--font); }
+.toast-title { color: var(--color); }
+.toast-description { color: var(--muted); }
+@media (prefers-reduced-motion: reduce) { a { transition: none; } }
 
-::selection {
-	background: var(--color);
-	color: var(--background);
-}
+/* Page rhythm: a stacked header, then short labelled sections, all on the scale above. */
+.intro-header { margin-bottom: var(--gap-section); }
+.section + .section { margin-top: var(--gap-section); }
+.section-title { display: block; margin: 0 0 var(--gap-title); }
 
-body {
-	height: 100svh;
-    margin: 0;
-    background: var(--background);
-    color: var(--color);
-	line-height: 2.5ch;
-	overflow-y: scroll;
-}
-
-a {
-	color: var(--primary);
-	text-decoration: none;
-	border-bottom: 1px solid #222;
-	transition: all var(--transition-duration) var(--transition-type);
-
-	&:hover {
-		border-bottom-width: .5ch;
-	}
-}
-
-p.article {
-	position: relative;
-	font-size: 20px;
-	margin-bottom: 2ch;
-
-	/* &:hover {
-		&::before {
-			content: '—';
-			position: absolute;
-			left: -2ch;
-			color: #555;
-		}
-	} */
-}
-
-.toast {
-	width: 100%;
-	background: var(--background);
-	padding: .75rem 1.25rem;
-	border: 1px solid #222;
-}
-
-.toast-title {
-	color: #777;
-}
-
-.toast-description {
-	
-}
-
-@media (prefers-reduced-motion) {
-	a {
-		transition: none;
-	}
+/* Page transitions (startViewTransition in the (stuff) layout). The old page slides out with a
+   blur: to the left when moving right through the nav (data-nav='forward'), to the right when moving
+   left, up for any other navigation. The new page isn't animated as a whole: its blocks come in one
+   by one from the opposite side (see src/lib/transitions.js). The nav slides on its own via
+   view-transition-name: header. */
+::view-transition-old(root) { animation: .25s cubic-bezier(.4, 0, 1, 1) both page-out; }
+html[data-nav='forward']::view-transition-old(root) { animation-name: page-out-left; }
+html[data-nav='back']::view-transition-old(root) { animation-name: page-out-right; }
+::view-transition-new(root) { animation: none; }
+::view-transition-group(header) { animation-duration: .35s; animation-timing-function: cubic-bezier(.2, 0, 0, 1); }
+@keyframes page-out { to { opacity: 0; transform: translateY(-8px); filter: blur(4px); } }
+@keyframes page-out-left { to { opacity: 0; transform: translateX(-24px); filter: blur(4px); } }
+@keyframes page-out-right { to { opacity: 0; transform: translateX(24px); filter: blur(4px); } }
+@media (prefers-reduced-motion: reduce) {
+    ::view-transition-old(root), ::view-transition-new(root), ::view-transition-group(header) { animation: none; }
 }

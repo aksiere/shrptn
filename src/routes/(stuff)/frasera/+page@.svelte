@@ -9,7 +9,7 @@
     onMount(() => show = true)
 
 	const components = [
-		{ href: 'https://frasera.shrptn.me', title: 'Drawer', desc: 'выдвигающийся компонент, может использоваться в качестве замены модальному окну на мобильных устройствах.' },
+		{ href: 'https://frasera.shrptn.me', title: 'Drawer', desc: 'A drawer component that can replace modal dialogs on mobile devices.' },
 	]
 </script>
 
