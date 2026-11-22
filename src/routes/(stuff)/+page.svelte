@@ -21,7 +21,7 @@
     <div class='summary'>
         <p in:rise|global={{ delay: stagger(0) }}>Developer and QA engineer from Saint Petersburg.</p>
         <p in:rise|global={{ delay: stagger(1) }}>Writing SvelteKit since 2020: tried React and Vue, chose Svelte back in the Sapper days, and every experiment since has been built on it.</p>
-        <p in:rise|global={{ delay: stagger(2) }}>Most recently in test automation at <a href='https://www.onlyoffice.com/' target='_blank' rel='noopener noreferrer'>ONLYOFFICE</a>, extending the testing library with new modules and tests. AI tools like Claude Code and Codex are part of the everyday workflow.</p>
+        <p in:rise|global={{ delay: stagger(2) }}>Most recently in test automation at <a href='https://www.onlyoffice.com/' target='_blank' rel='noopener noreferrer' style="text-transform: uppercase;">ONLYOFFICE</a>, extending the testing library with new modules and tests. AI tools like Claude Code and Codex are part of the everyday workflow.</p>
     </div>
 </section>
 
